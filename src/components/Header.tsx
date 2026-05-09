@@ -4,7 +4,10 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="shell header-inner">
-        <Link className="brand" to="/">SkuadUp Legal</Link>
+        <Link className="brand" to="/">
+          <span className="brand-gradient">SkuadUp</span>{' '}
+          <span className="brand-plain">Legal</span>
+        </Link>
         <nav aria-label="Primary" className="site-nav">
           <div className="nav-dropdown">
             <NavLink to="/terms" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
