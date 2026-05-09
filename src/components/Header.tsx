@@ -21,9 +21,18 @@ export default function Header() {
               <NavLink to="/terms/archive" className="dropdown-link">Terms of Service Archive</NavLink>
             </div>
           </div>
-          <NavLink to="/privacy" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
-            Privacy
-          </NavLink>
+          <div className="nav-dropdown">
+            <NavLink to="/privacy" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
+              <span className="nav-link-with-caret">
+                Privacy
+                <span className="nav-caret" aria-hidden="true">▾</span>
+              </span>
+            </NavLink>
+            <div className="dropdown-menu">
+              <NavLink to="/privacy" className="dropdown-link">Privacy</NavLink>
+              <NavLink to="/privacy/archive" className="dropdown-link">Privacy Policy Archive</NavLink>
+            </div>
+          </div>
           <NavLink to="/community-guidelines" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
             Community Guidelines
           </NavLink>
