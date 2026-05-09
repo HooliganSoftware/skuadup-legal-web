@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import LocationPolicy from './pages/LocationPolicy';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import TermsArchive from './pages/TermsArchive';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/terms/archive" element={<TermsArchive />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/community-guidelines" element={<CommunityGuidelines />} />
           <Route path="/location-policy" element={<LocationPolicy />} />

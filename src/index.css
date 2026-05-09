@@ -72,6 +72,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  align-items: center;
 }
 
 .nav-link {
@@ -84,6 +85,52 @@ a {
 .nav-link:hover,
 .nav-link.active {
   color: var(--text);
+  background: var(--accent-soft);
+}
+
+.nav-link-with-caret {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-caret {
+  font-size: 0.8em;
+  line-height: 1;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  padding: 10px 8px 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(15, 20, 25, 0.08);
+  display: none;
+  z-index: 20;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  display: grid;
+  gap: 4px;
+}
+
+.dropdown-link {
+  text-decoration: none;
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.dropdown-link:hover {
   background: var(--accent-soft);
 }
 
@@ -192,6 +239,48 @@ main {
   gap: 8px;
 }
 
+.terms-archive {
+  margin-top: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: clamp(18px, 3.4vw, 34px);
+}
+
+.terms-archive h1,
+.terms-archive h2 {
+  margin: 0;
+  font-size: 1.45rem;
+}
+
+.terms-archive p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.terms-archive ul {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.terms-archive li {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.terms-archive li span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 24px 0;
@@ -217,6 +306,14 @@ main {
     width: 100%;
     overflow: auto;
     padding-bottom: 3px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: grid;
+    margin-top: 6px;
+    box-shadow: none;
+    min-width: 0;
   }
 
   main {

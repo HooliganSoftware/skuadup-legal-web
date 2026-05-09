@@ -1,23 +1,32 @@
 import { Link, NavLink } from 'react-router-dom';
 
-const navItems = [
-  { to: '/terms', label: 'Terms' },
-  { to: '/privacy', label: 'Privacy' },
-  { to: '/community-guidelines', label: 'Community Guidelines' },
-  { to: '/location-policy', label: 'Location Policy' }
-];
-
 export default function Header() {
   return (
     <header className="site-header">
       <div className="shell header-inner">
         <Link className="brand" to="/">SkuadUp Legal</Link>
         <nav aria-label="Primary" className="site-nav">
-          {navItems.map((item) => (
-            <NavLink key={item.to} to={item.to} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
-              {item.label}
+          <div className="nav-dropdown">
+            <NavLink to="/terms" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
+              <span className="nav-link-with-caret">
+                Terms
+                <span className="nav-caret" aria-hidden="true">▾</span>
+              </span>
             </NavLink>
-          ))}
+            <div className="dropdown-menu">
+              <NavLink to="/terms" className="dropdown-link">Terms</NavLink>
+              <NavLink to="/terms/archive" className="dropdown-link">Terms of Service Archive</NavLink>
+            </div>
+          </div>
+          <NavLink to="/privacy" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
+            Privacy
+          </NavLink>
+          <NavLink to="/community-guidelines" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
+            Community Guidelines
+          </NavLink>
+          <NavLink to="/location-policy" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
+            Location Policy
+          </NavLink>
         </nav>
       </div>
     </header>
