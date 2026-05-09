@@ -191,6 +191,18 @@ main {
   padding: clamp(18px, 3.4vw, 34px);
 }
 
+.legal-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  gap: 24px;
+}
+
+.legal-sidebar {
+  position: sticky;
+  top: 86px;
+  align-self: start;
+}
+
 .last-updated {
   margin-top: 10px;
   color: var(--muted);
@@ -210,11 +222,13 @@ main {
 }
 
 .toc {
-  margin-top: 24px;
-  padding: 16px;
+  margin-top: 0;
+  padding: 14px;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: #fafcff;
+  max-height: calc(100vh - 110px);
+  overflow: auto;
 }
 
 .toc h2 {
@@ -329,5 +343,17 @@ main {
 
   main {
     padding-top: 24px;
+  }
+
+  .legal-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-sidebar {
+    position: static;
+  }
+
+  .toc {
+    max-height: none;
   }
 }
